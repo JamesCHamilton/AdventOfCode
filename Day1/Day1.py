@@ -1,4 +1,3 @@
-from collections import defaultdict
 def sortedLists(filepath):
     try:
         file = open(filepath, 'r')
