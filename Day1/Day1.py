@@ -31,13 +31,8 @@ def distance_between_lists(list1, list2):
     
 def similarity(left_List, right_List):
     right_counter = dict.fromkeys(left_List,0)
-    left_counter = dict.fromkeys(left_List,0)
 
-    for i in left_List:
-        if i in left_counter:
-            left_counter[i] += 1
-        else:
-            continue
+
 
     for j in right_List:
         if j in right_counter:
@@ -45,13 +40,9 @@ def similarity(left_List, right_List):
         else:
             continue
 
-            
-    similarities_score = []
-    for key,value in right_counter.items():
-        if key in left_counter:
-            similarities_score.append((int(key) * int(value))*left_counter.get(key))
-
-    result = sum(similarities_score)
+    result = 0
+    for i in left_List:
+        result += i * right_counter[i]
     print(result)
     
     
